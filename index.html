@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Projeto Pessoa</title>
+    </head>
+    <body>
+        <span id="atributosDaPessoa">
+             <!-- aqui será adicionado componentes usando programação -->   
+        </span>
+        <script src="pessoaCamposDoFormulario.js" ></script>
+        <script>
+            function retornarLabel(nomeDoAtributo){
+                return "<label>" + nomeDoAtributo + "</label></br>";
+            }
+            function retornarInput(nomeDoAtributo){
+                return "<input id='" + nomeDoAtributo + "' type='text' /></br></hr>";
+            }
+            function retornarTextoDaTela(){
+                return document.getElementById('atributosDaPessoa').innerHTML;
+            }
+            function setTextoNaTela(textoDaTela,labelNome,inputDoNome){
+                document.getElementById('atributosDaPessoa').innerHTML = textoDaTela + labelNome + inputDoNome;
+            }
+
+            function escreverCampoNomeNaTela(){
+                var textoDoCampo = camposDoFormularioPessoa.getNome();
+                var labelNome = retornarLabel(textoDoCampo);
+                var textoDaTela = retornarTextoDaTela();
+                var inputDoNome = retornarInput("Nome");
+                setTextoNaTela(textoDaTela,labelNome,inputDoNome);
+            }
+            function escreverCampoIdNaTela(){
+                var textoDoCampo = camposDoFormularioPessoa.getId();
+                var labelNome = retornarLabel(textoDoCampo);
+                var textoDaTela = retornarTextoDaTela();
+                var inputDoNome = retornarInput("id");
+                setTextoNaTela(textoDaTela,labelNome,inputDoNome);
+            }
+            function escreverCampoRgNaTela(){
+                var textoDoCampo = camposDoFormularioPessoa.getRg();
+                var labelNome = retornarLabel(textoDoCampo);
+                var textoDaTela = retornarTextoDaTela();
+                var inputDoNome = retornarInput("RG");
+                setTextoNaTela(textoDaTela,labelNome,inputDoNome);
+            }
+            escreverCampoIdNaTela();
+            escreverCampoNomeNaTela();
+            escreverCampoRgNaTela();
+        </script>
+    </body>
+</html>
